@@ -52,6 +52,9 @@ jobs:
           ./compile-ffmpeg.sh all
           cd ..
           ./compile-ijk.sh all
+      - name: Clean objs
+        run: |
+          find . -type d -name "obj" | xargs rm -rf
       - name: ZIP ijkplayer
         run: |
           ls
