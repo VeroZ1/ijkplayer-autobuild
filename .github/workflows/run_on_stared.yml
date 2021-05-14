@@ -66,8 +66,3 @@ jobs:
         with:
           name: ijkplayer
           path: ./ijkplayer-android/android/ijkplayer.zip
-      - name: Check Build
-        run: |
-          java -version
-          ls "$ANDROID_HOME"
-          ls "$ANDROID_NDK"
