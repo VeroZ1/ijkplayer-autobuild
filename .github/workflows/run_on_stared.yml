@@ -68,4 +68,3 @@ jobs:
           java -version
           ls "$ANDROID_HOME"
           ls "$ANDROID_NDK"
-          ls -thla ./android/ijkplayer/
