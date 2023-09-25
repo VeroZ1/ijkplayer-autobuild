@@ -48,8 +48,8 @@ jobs:
           cd config
           sed -i 's/export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --disable-vda"/#&/' ./module-default.sh
           sed -i 's/export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --disable-ffserver"/#&/' ./module-default.sh
-          echo 'export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --disable-linux-perf"' >> ./module-default.sh
-          echo 'export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --disable-bzlib"' >> ./module-default.sh
+          echo -e 'export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --disable-linux-perf"\n' >> ./module-default.sh
+          echo -e 'export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --disable-bzlib"\n' >> ./module-default.sh
           cat ./module-default.sh
           rm module.sh
           ln -s module-default.sh module.sh
