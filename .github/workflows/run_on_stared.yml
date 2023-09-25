@@ -46,6 +46,8 @@ jobs:
           ./init-android.sh
           ./init-android-openssl.sh
           cd config
+          sed -i 's/export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --disable-vda"/#&/' ./module-default.sh
+          sed -i 's/export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --disable-ffserver"/#&/' ./module-default.sh
           rm module.sh
           ln -s module-default.sh module.sh
           cd ..
