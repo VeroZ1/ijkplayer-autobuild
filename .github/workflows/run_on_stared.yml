@@ -44,6 +44,7 @@ jobs:
           cd ijkplayer-android
           ./init-android.sh
           ./init-android-openssl.sh
+          echo 'export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-decoder=ac3"' >> ./config/module-lite.sh
           cd ./android/contrib
           ./compile-openssl.sh clean
           ./compile-openssl.sh all
