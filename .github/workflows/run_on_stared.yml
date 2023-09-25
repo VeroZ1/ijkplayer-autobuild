@@ -45,17 +45,10 @@ jobs:
           cd ijkplayer-android
           ./init-android.sh
           ./init-android-openssl.sh
-          echo 'export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-encoder=ac3"' >> ./config/module-lite.sh
-          echo 'export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-decoder=ac3"' >> ./config/module-lite.sh
-          echo 'export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-encoder=ac3_fixed"' >> ./config/module-lite.sh
-          echo 'export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-decoder=atrac3"' >> ./config/module-lite.sh
-          echo 'export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-decoder=atrac3p"' >> ./config/module-lite.sh
-          echo 'export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-encoder=eac3"' >> ./config/module-lite.sh
-          echo 'export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-decoder=eac3"' >> ./config/module-lite.sh
-          echo 'export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-muxer=ac3"' >> ./config/module-lite.sh
-          echo 'export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-demuxer=ac3"' >> ./config/module-lite.sh
-          echo 'export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-muxer=eac3"' >> ./config/module-lite.sh
-          echo 'export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-demuxer=eac3"' >> ./config/module-lite.sh
+          cd config
+          rm module.sh
+          ln -s module-default.sh module.sh
+          cd ..
           cd ./android/contrib
           ./compile-openssl.sh clean
           ./compile-openssl.sh all
